@@ -10,8 +10,7 @@ def encode(password):
             encoded += str(shifted)
     return encoded
 
-
-while True:
+def display_menu():
     print(f"""Menu
 ---------------
 1. Encode
@@ -19,13 +18,19 @@ while True:
 3. Quit
 """)
 
-    ms = int(input("Please enter an option: "))
+def decoder(encoded):
+    password = encoded
+def main():
+    encoded = ''
+    while True:
+        display_menu()
+        ms = int(input("Please enter an option: "))
 
-    if ms == 1:
-        password = input("Please enter your password to encode: ")
-        encoded = encode(password)
-        print("Your password has been encoded and stored!")
-    if ms ==2:
-        asnwer = print(f" The encoded password is {encoded}, and the original password is {password}")
-    if ms == 3:
-        break
+        if ms == 1:
+            password = input("Please enter your password to encode: ")
+            encoded = encode(password)
+            print("Your password has been encoded and stored!")
+        elif ms ==2:
+            asnwer = print(f" The encoded password is {encoded}, and the original password is {password}")
+        elif ms == 3:
+            break
