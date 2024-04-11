@@ -26,6 +26,7 @@ def decoder(encoded):
         else:
             shifted = int(digit) - 3
         decoded += str(shifted)
+    return decoded
 def main():
     encoded = ''
     while True:
@@ -37,7 +38,8 @@ def main():
             encoded = encode(password)
             print("Your password has been encoded and stored!")
         elif ms ==2:
-            asnwer = print(f" The encoded password is {encoded}, and the original password is {password}")
+            decoded = decoder(encoded)
+            asnwer = print(f" The encoded password is {encoded}, and the original password is {decoded}")
         elif ms == 3:
             break
 
