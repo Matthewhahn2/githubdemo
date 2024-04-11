@@ -19,7 +19,13 @@ def display_menu():
 """)
 
 def decoder(encoded):
-    password = encoded
+    decoded = ''
+    for digit in encoded:
+        if int(digit) < 3:
+            shifted = (int(digit) + 10) - 3
+        else:
+            shifted = int(digit) - 3
+        decoded += str(shifted)
 def main():
     encoded = ''
     while True:
@@ -34,3 +40,6 @@ def main():
             asnwer = print(f" The encoded password is {encoded}, and the original password is {password}")
         elif ms == 3:
             break
+
+if __name__ == "__main__":
+    main()
